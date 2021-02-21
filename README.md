@@ -24,11 +24,11 @@
 	* First time using Kotlin to develop an android application
 	* Effort to follow the MVVM standards
 	* Despite the use of a flexible layout, due to time constraints, there is only one layout resource so the app might malfunction on other screensizes
-	* Deployed and Tested on **Pixel 3a XL API 28**
+	* Deployed and Tested on Pixel 3a XL API 28
 	* Possible Future Work
-	* Use Depedency Injectors
+	  * Use Depedency Injectors
 	* I really enjoyed the challenge
-	* Hours consumed : 35h
+	* Hours consumed : 45h
 
 ##Screenshots
 
