@@ -1,0 +1,14 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="Units">
+        <ListPreference
+            android:defaultValue="metric"
+            android:entries="@array/unitSystemEntries"
+            android:entryValues="@array/unitSystemValues"
+            android:key="Unit"
+            android:summary="%s"
+            android:title="Unit System" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
