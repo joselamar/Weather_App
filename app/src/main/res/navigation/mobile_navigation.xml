@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_currentlocation">
+
+    <fragment
+        android:id="@+id/navigation_currentlocation"
+        android:name="lamarao.jose.weatherapp.ui.current_Location.current_location_Fragment"
+        android:label="@string/current_location"
+        tools:layout="@layout/fragment_current_location" />
+
+    <fragment
+        android:id="@+id/navigation_cities"
+        android:name="lamarao.jose.weatherapp.ui.cities.Cities_Fragment"
+        android:label="@string/cities"
+        tools:layout="@layout/fragment_cities" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="lamarao.jose.weatherapp.ui.settings.SettingsFragment"
+        android:label="SettingsFragment" />
+</navigation>

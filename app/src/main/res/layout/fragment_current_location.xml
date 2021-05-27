@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="lamarao.jose.wit.software.challenge.ui.Current_Location.current_location_Fragment">
+    tools:context="lamarao.jose.weatherapp.ui.current_Location.current_location_Fragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"
@@ -474,3 +476,4 @@
         android:text="Loading Data" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

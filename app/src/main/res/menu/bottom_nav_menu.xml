@@ -2,18 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/home_currentlocation"
+        android:id="@+id/navigation_currentlocation"
         android:icon="@drawable/ic_current_location"
-        android:title="@string/curent_location" />
+        android:title="@string/current_location" />
 
     <item
-        android:id="@+id/cities"
+        android:id="@+id/navigation_cities"
         android:icon="@drawable/ic_cities"
         android:title="@string/cities" />
     <item
-        android:id="@+id/settings"
+        android:id="@+id/navigation_settings"
         android:icon="@drawable/ic_settings"
-        android:title="Settings"
-        />
+        android:title="@string/settings" />
 
 </menu>
