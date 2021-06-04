@@ -7,6 +7,12 @@ import androidx.room.*
 @Dao
 interface WeatherDao {
 
+    @Query("select * from UserLocation")
+    fun getUserLocation(): LiveData<UserLocation>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertUserLocation(vararg currentLocation: UserLocation)
+
     @Query("select * from Weather_Class")
     fun getWeatherCurrentLocation(): LiveData<Weather_Class>
 
@@ -21,7 +27,7 @@ interface WeatherDao {
     fun insertCities(vararg cities: cities_weather_class)
 }
 
-@Database(entities = [Weather_Class::class, cities_weather_class::class], version = 2)
+@Database(entities = [Weather_Class::class, cities_weather_class::class, UserLocation::class], version = 2)
 @TypeConverters(DataTypeConverters::class)
 abstract class WeatherDatabase : RoomDatabase() {
     abstract val weatherDao : WeatherDao

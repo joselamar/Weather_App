@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:anroid="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
@@ -8,9 +7,6 @@
         <variable
             name="WeatherCities"
             type="lamarao.jose.weatherapp.database.Weather_Cities" />
-        <variable
-            name="citiesViewModel"
-            type="lamarao.jose.weatherapp.ui.cities.Cities_ViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
-            app:CityTime="@{WeatherCities.dt+WeatherCities.sys.timezone}"
+            app:Time="@{WeatherCities.dt+WeatherCities.sys.timezone}"
             android:textColor="@color/black"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            app:CityWeather="@{WeatherCities.main.temp}"
+            app:Temp="@{WeatherCities.main.temp}"
             android:textColor="@color/black"
             android:textSize="60sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +40,7 @@
             android:id="@+id/city_weather_metric"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{WeatherCities.unit}"
+            app:WeatherMetric="@{WeatherCities.unit}"
             android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -76,7 +72,7 @@
             android:id="@+id/city_weather_icon"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            app:CityWeatherIcon="@{WeatherCities.weather.get(0).icon}"
+            app:WeatherIcon="@{WeatherCities.weather.get(0).icon}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@id/guideline2"
             app:layout_constraintTop_toTopOf="parent" />
@@ -100,6 +96,7 @@
             android:layout_marginEnd="10dp"
             app:WindDegree="@{WeatherCities.wind.deg}"
             app:WindVelocity="@{WeatherCities.wind.speed}"
+            app:WindMetric="@{WeatherCities.unit}"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@id/guideline3"
             app:layout_constraintTop_toBottomOf="@id/city_weather_desc"
@@ -111,7 +108,7 @@
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            app:CityWeatherPressure="@{WeatherCities.main.pressure}"
+            app:WeatherPressure="@{WeatherCities.main.pressure}"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@id/guideline3"
             app:layout_constraintTop_toBottomOf="@id/city_weather_wind" />
@@ -123,7 +120,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="5dp"
-            app:CityWeatherHumidity="@{WeatherCities.main.humidity}"
+            app:WeatherHumidity="@{WeatherCities.main.humidity}"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@id/guideline3"
             app:layout_constraintTop_toBottomOf="@id/city_weather_pressure" />

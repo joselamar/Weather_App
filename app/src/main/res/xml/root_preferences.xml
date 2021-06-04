@@ -1,14 +1,21 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory android:title="Units">
+    <PreferenceCategory android:title="Preferences">
         <ListPreference
             android:defaultValue="metric"
             android:entries="@array/unitSystemEntries"
             android:entryValues="@array/unitSystemValues"
             android:key="Unit"
-            android:summary="%s"
+            android:summary="%1$s"
             android:title="Unit System" />
+        <ListPreference
+            android:defaultValue="AppTheme"
+            android:entries="@array/themeEntries"
+            android:entryValues="@array/themeValues"
+            android:key="Theme"
+            android:summary="%1$s"
+            android:title="Theme" />
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -1,5 +1,5 @@
 <resources>
-    <!-- Reply Preference -->
+
     <string-array name="unitSystemValues">
         <item>metric</item>
         <item>imperial</item>
@@ -10,5 +10,14 @@
         <item>Imperial</item>
     </string-array>
 
+    <string-array name="themeValues">
+        <item>AppTheme</item>
+        <item>AppThemeDark</item>
+    </string-array>
+
+    <string-array name="themeEntries">
+        <item>Light</item>
+        <item>Dark</item>
+    </string-array>
 
 </resources>

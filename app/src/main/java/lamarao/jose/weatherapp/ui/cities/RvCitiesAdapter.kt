@@ -7,7 +7,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import lamarao.jose.weatherapp.R
 import lamarao.jose.weatherapp.database.Weather_Cities
-import lamarao.jose.weatherapp.database.cities_weather_class
 import lamarao.jose.weatherapp.databinding.CityItemBinding
 
 

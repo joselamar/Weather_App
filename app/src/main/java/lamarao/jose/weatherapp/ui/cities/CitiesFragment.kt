@@ -11,26 +11,27 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import lamarao.jose.weatherapp.R
 import lamarao.jose.weatherapp.databinding.FragmentCitiesBinding
+import timber.log.Timber
 
-class Cities_Fragment : Fragment() {
+class CitiesFragment : Fragment() {
 
     private lateinit var citiesViewModelFactory: CustomViewModelFactory
-    private var viewModelAdapter: RvCitiesAdapter? = null
+    private lateinit var viewModelAdapter: RvCitiesAdapter
 
-    private var _binding: FragmentCitiesBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var _binding: FragmentCitiesBinding
+    private val binding get() = _binding
 
-    private val citiesViewModel: Cities_ViewModel by lazy {
+    private val citiesViewModel: CitiesViewModel by lazy {
         val application = requireNotNull(this.activity).application
         citiesViewModelFactory = CustomViewModelFactory(application)
-        ViewModelProvider(this,citiesViewModelFactory).get(Cities_ViewModel::class.java)
+        ViewModelProvider(this,citiesViewModelFactory).get(CitiesViewModel::class.java)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         citiesViewModel.citiesWeather.observe(viewLifecycleOwner, { citiesweather ->
             citiesweather?.apply {
-                viewModelAdapter?.data = citiesweather.list
+                viewModelAdapter.data = citiesweather.list
             }
         })
     }
@@ -48,11 +49,6 @@ class Cities_Fragment : Fragment() {
         }
 
         return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
 }

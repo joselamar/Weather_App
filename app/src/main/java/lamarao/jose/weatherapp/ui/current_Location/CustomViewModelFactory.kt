@@ -1,11 +1,16 @@
 package lamarao.jose.weatherapp.ui.current_Location
 
+import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import java.lang.IllegalArgumentException
 
-class CustomViewModelFactory(private val lat: String, private val lon: String, private val units : String) : ViewModelProvider.NewInstanceFactory() {
+class CustomViewModelFactory(private val application : Application) : ViewModelProvider.NewInstanceFactory() {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return current_location_ViewModel(lat,lon,units) as T
+        if (modelClass.isAssignableFrom(CurrentLocationViewModel::class.java)) {
+            return CurrentLocationViewModel(application) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class")
     }
 }

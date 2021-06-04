@@ -1,11 +1,16 @@
 package lamarao.jose.weatherapp
 
+import android.content.Context
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.datastore.preferences.preferencesDataStore
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import lamarao.jose.weatherapp.databinding.ActivityMainBinding
+import timber.log.Timber
+import timber.log.Timber.DebugTree
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,6 +18,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        if (BuildConfig.DEBUG)
+            Timber.plant(DebugTree())
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

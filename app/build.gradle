@@ -51,13 +51,10 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
     implementation 'androidx.preference:preference-ktx:1.1.1'
-    implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
 
     //test
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
@@ -74,7 +71,6 @@ dependencies {
     implementation "com.squareup.moshi:moshi-kotlin:1.9.3"
     kapt("com.squareup.moshi:moshi-kotlin-codegen:1.12.0")
 
-
     //retrofit with moshi
     implementation "com.squareup.retrofit2:retrofit:2.5.0"
     implementation "com.squareup.retrofit2:converter-moshi:2.5.0"
@@ -84,4 +80,9 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
     implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2"
 
+    //Timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    //DataStore
+    implementation "androidx.datastore:datastore-preferences:1.0.0-beta01"
 }

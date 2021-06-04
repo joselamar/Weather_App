@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_currentlocation"
-        android:name="lamarao.jose.weatherapp.ui.current_Location.current_location_Fragment"
+        android:name="lamarao.jose.weatherapp.ui.current_Location.CurrentLocationFragment"
         android:label="@string/current_location"
         tools:layout="@layout/fragment_current_location" />
 
     <fragment
         android:id="@+id/navigation_cities"
-        android:name="lamarao.jose.weatherapp.ui.cities.Cities_Fragment"
+        android:name="lamarao.jose.weatherapp.ui.cities.CitiesFragment"
         android:label="@string/cities"
         tools:layout="@layout/fragment_cities" />
 

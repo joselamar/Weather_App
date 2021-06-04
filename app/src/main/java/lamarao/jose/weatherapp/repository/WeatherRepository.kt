@@ -1,6 +1,5 @@
 package lamarao.jose.weatherapp.repository
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -8,6 +7,7 @@ import lamarao.jose.weatherapp.database.WeatherDatabase
 import lamarao.jose.weatherapp.database.Weather_Class
 import lamarao.jose.weatherapp.database.cities_weather_class
 import lamarao.jose.weatherapp.network.Weather_Api
+import timber.log.Timber
 
 class WeatherRepository(private val database : WeatherDatabase) {
 
@@ -15,9 +15,15 @@ class WeatherRepository(private val database : WeatherDatabase) {
 
     suspend fun refreshCurrentLocationWeather(lat: String, lon: String, unit: String){
         withContext(Dispatchers.IO) {
-            val currentLocation = Weather_Api.retrofitService.getWeatherData(lat,lon,unit).await()
-            currentLocation.unit = unit
-            database.weatherDao.insertCurrentLocation(currentLocation)
+            try {
+                val currentLocation = Weather_Api.retrofitService.getWeatherData(lat,lon,unit).await()
+                currentLocation.index = 1
+                currentLocation.unit = unit
+                (currentLocation.hourly).forEachIndexed { index , element -> element.index = index }
+                database.weatherDao.insertCurrentLocation(currentLocation)
+            } catch (e: Exception) {
+                Timber.e(e)
+            }
         }
     }
 
@@ -31,7 +37,7 @@ class WeatherRepository(private val database : WeatherDatabase) {
                 database.weatherDao.insertCities(citiesWeather)
 
             } catch (e: Exception) {
-                Log.e("TAG","refreshVideos() error = "+e.message)
+                Timber.e(e)
             }
         }
     }

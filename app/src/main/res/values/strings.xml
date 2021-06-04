@@ -7,5 +7,23 @@
     <string name="city_weather_string">%1$sº</string >
     <string name="city_weather_pressure_string">%1$d hPA</string >
     <string name="city_weather_humidity_string">%1$d%%</string >
-    <string name="city_weather_wind">%1$s %2$s</string>
+    <string name="city_weather_wind">%1$s %2$s%3$s</string>
+    <string name="current_location_hour">Now</string>
+    <string name="current_location_hour_rain">%1$s%%</string>
+    <string name="current_location_sunrise">Sunrise</string>
+    <string name="current_location_sunset">Sunset</string>
+    <string name="current_location_rain_probability">Rain Probability</string>
+    <string name="current_location_humidity">Humidity</string>
+    <string name="current_location_wind">Wind</string>
+    <string name="current_location_thermal_sensation">Thermal Sensation</string>
+    <string name="current_location_thermal_sensation_value">%1$sº%2$s</string>
+    <string name="current_location_precipitation">Precipitation</string>
+    <string name="current_location_precipitation_value">%1$s mm</string>
+    <string name="current_location_pressure">Pressure</string>
+    <string name="current_location_visibility">Visibility</string>
+    <string name="current_location_visibility_value">%1$s km</string>
+    <string name="current_location_uv_index">UV Index</string>
+    <string name="current_location_uv_index_value">%1$s</string>
+
+
 </resources>

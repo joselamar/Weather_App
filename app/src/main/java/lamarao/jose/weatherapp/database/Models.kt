@@ -5,10 +5,20 @@ import androidx.room.*
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
+@Entity
+data class UserLocation(
+    @PrimaryKey
+    val index: Int,
+    val lat: String,
+    val lon: String,
+    val locality: String
+)
 
 @Entity
 @JsonClass(generateAdapter = true)
 data class Weather_Class(
+    @PrimaryKey
+    var index: Int?,
     @Json(name = "current")
     @Embedded val current: Current,
     @Json(name = "daily")
@@ -19,7 +29,6 @@ data class Weather_Class(
     val lat: Double,
     @Json(name = "lon")
     val lon: Double,
-    @PrimaryKey
     @Json(name = "timezone")
     val timezone: String,
     @Json(name = "timezone_offset")
@@ -209,7 +218,8 @@ data class Hourly(
     @Json(name = "wind_gust")
     val windGust: Double?,
     @Json(name = "wind_speed")
-    val windSpeed: Double
+    val windSpeed: Double,
+    var index : Int?
 )
 
 @JsonClass(generateAdapter = true)
